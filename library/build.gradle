@@ -1,6 +1,25 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.novoda.bintray-release'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9.1'
+    }
+}
+
+publish {
+    userOrg = 'chi-account'
+    groupId = 'com.permissionx.library'
+    artifactId = 'permissionx'
+    publishVersion = '1.0.0'
+    desc = 'Make Android runtime permission request easy.'
+    website = 'https://github.com/Chi-Account/PermissionX'
+}
 
 android {
     compileSdkVersion 29
